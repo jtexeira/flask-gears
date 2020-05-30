@@ -1,6 +1,9 @@
 import mimetypes
 import os
-from StringIO import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 from functools import partial
 from flask import send_file, current_app, url_for, request
 from jinja2 import Markup
